@@ -24,6 +24,9 @@ The project explores how reinforcement learning can be used for portfolio optimi
 │   ├── env_utils.py       # Portfolio environment implementation
 │   ├── evaluation.py      # Performance evaluation tools
 │   └── training.py        # Training procedures for RL agents
+├── frontend/              # Streamlit web application
+│   ├── app.py             # Main Streamlit application
+│   └── run_app.sh         # Script to launch the app
 ├── saved_models/          # Directory for storing trained models
 ├── main.py                # Main script to run experiments
 └── portfolio_management.ipynb # Jupyter notebook demonstrating the project
@@ -41,7 +44,7 @@ cd rl-portfolio-management
 2. Install the required packages:
 
 ```bash
-pip install numpy pandas matplotlib torch gymnasium scipy yfinance seaborn tqdm
+pip install numpy pandas matplotlib torch gymnasium scipy yfinance seaborn tqdm streamlit plotly
 ```
 
 ## Data
@@ -84,6 +87,25 @@ To run stress testing on crisis periods:
 
 ```bash
 python main.py --algorithm both --eval-only --stress-test
+```
+
+### Web Interface
+
+The project includes a Streamlit web interface for interactive visualization and experimentation:
+
+```bash
+# Run the Streamlit app
+streamlit run frontend/app.py
+
+# Or use the provided shell script
+./frontend/run_app.sh
+```
+
+The web interface provides:
+1. **Data Explorer**: Visualize historical asset price data and correlations
+2. **Portfolio Backtesting**: Backtest portfolios with different allocation strategies
+3. **Algorithm Comparison**: Compare performance of different RL algorithms
+4. **Stress Testing**: Analyze portfolio performance during crisis periods
 ```
 
 ## Key Components
